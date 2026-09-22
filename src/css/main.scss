@@ -1,5 +1,67 @@
-/* Your SCSS here. */
+/* SCSS variable declarations */
+$nav-title-width: 180px;
+$nav-height: 50px;
+$nav-font-size: 12pt;
+
+/* SCSS for near-the-root elements */
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
 img {
     margin: 0 auto;
     display: block;
 }
+
+/* nav SCSS */
+nav {
+    background-color: #00FA55;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: $nav-font-size;
+}
+
+#nav-inner {
+    max-width: 800px;
+    display: flex;
+    height: $nav-height;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-title {
+    min-width: $nav-title-width;
+    width: $nav-title-width;
+}
+
+#nav-button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-button {
+    display: inline;
+    padding: 0 8px;
+}
+
+@media screen and (max-width: 745px) {
+    #nav-button-wrapper {
+        max-width: 300px;
+    }
+}
+
+/* main SCSS */
+main {
+    margin-top: $nav-height;
+}
+
