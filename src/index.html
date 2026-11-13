@@ -13,53 +13,76 @@
                     CY's 3D Printer Project
                 </div>
                 <div id="nav-button-wrapper">
-                    <div class="nav-button">
-                        Home
-                    </div>
-                    <div class="nav-button">
+                    <div id="nav-inspiration" class="nav-button">
                         Inspiration
                     </div>
-                    <div class="nav-button">
+                    <div id="nav-details" class="nav-button">
                         Printer Details
                     </div>
-                    <div class="nav-button">
+                    <div id="nav-components" class="nav-button">
                         Components
                     </div>
-                    <div class="nav-button">
+                    <div id="nav-demo-video" class="nav-button">
                         Demo Video
                     </div>
-                    <div class="nav-button">
+                    <div id="nav-demo-parts" class="nav-button">
+                        Demo Parts
+                    </div>
+                    <div id="nav-contact" class="nav-button">
                         Contact
                     </div>
                 </div>
             </div>
         </nav>
         <main>
-            <img src="assets/image.jpg">
-            <h1>
-                Hello World! Welcome to MP1!
-            </h1>
             <div id="home">
                 home - image on left and centered text (two column)
             </div>
             <div id="inspiration">
-                inspiration - paragraph centered, fixed background image
+                <div id="inspiration-image">
+                    <img src="assets/printer.jpg">
+                </div>
+                <div id="inspiration-text">
+                    <p>This 3D printer was inspired by my school's acquisition of two FlashForge 3D printers, as I found the print volumes of the acquired 3D printers limiting. I also wanted to explore different movement systems such as allowing the print nozzle to move vertically instead of horizontally.</p>
+                </div>
+                
             </div>
             <div id="details">
-                printer details
+                printer details - multi-column
             </div>
             <div id="components">
-                components - modal buttons and multi-column
+                components - modal
             </div>
             <div id="demo-video">
                 demo-video
             </div>
+            <div id="demo-parts-carousel">
+                demo-parts: 4 slide carousel
+                <div class="carousel">
+                    <div class="carousel-direction disabled" id="carousel-left">left</div>
+                    <ul id="carousel-scroller">
+                        <li id="carousel-slide-00" style="left: 0px;">text00</li>
+                        <li id="carousel-slide-01" style="left: 0px;">text01</li>
+                        <li id="carousel-slide-02" style="left: 0px;">text02</li>
+                        <li id="carousel-slide-03" style="left: 0px;">text03</li>
+                    </ul>
+                    <div class="carousel-direction" id="carousel-right">right</div>
+                </div>
+                <ul id="carousel-indicators">
+                    <li id="carousel-pos-00" class="active"></li>
+                    <li id="carousel-pos-01"></li>
+                    <li id="carousel-pos-02"></li>
+                    <li id="carousel-pos-03"></li>
+                </ul>
+            </div>
             <div id="contact">
                 contact info, footer, and social media icons
             </div>
-            <p>Placeholder images to enable scrolling</p>
-            <img src="assets/image.jpg">
-            <img src="assets/image.jpg">
+            <div>
+                Placeholder images to enable scrolling
+            </div>
+            <img class="centered" src="assets/image.jpg">
+            <img class="centered" src="assets/image.jpg">
         </main>
         
     </body>
