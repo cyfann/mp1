@@ -3,8 +3,9 @@ $nav-title-width: 240px;
 $nav-height: 40px;
 $nav-font-size: 14pt;
 $carousel-scroll-time: 1s;
+$padding: 20px;
 
-// SCSS for near-the-root elements
+// SCSS for general elements
 html {
     font-family: sans-serif;
 }
@@ -21,13 +22,28 @@ img {
     margin: 0 auto;
 }
 
+p {
+    font-size: 16pt;
+    line-height: 1.5em;
+    text-align: center;
+    margin: 0;
+    padding: $padding 0;
+}
+
+h1 {
+    font-size: 24pt;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    padding: $padding 0;
+}
+
 // nav SCSS
 nav {
     background-color: #00FA55;
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    width: 100vw;
     z-index: 10;
     font-size: $nav-font-size;
 }
@@ -50,13 +66,19 @@ nav {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
 .nav-button {
     display: inline;
     padding: 5px 8px;
+}
+
+@media screen and (max-width: 1500px) {
+    #demo-video video {
+        max-width: calc(min(100% - 400px, 1000px)) !important;
+    }
 }
 
 @media screen and (max-width: 1100px) {
@@ -84,18 +106,28 @@ nav {
     main {
         margin-top: $nav-height !important;
     }
-    
+
+    #demo-video video {
+        max-width: calc(min(100% - (400px / 2), 600px)) !important;
+    }
+
     #nav-inner {
         max-width: 670px;
     }
 }
 
+@media screen and (max-width: 1000px) {
+    #demo-video video {
+        max-width: calc(min(100% - 200px, 600px)) !important;
+    }
+}
+
 @media screen and (max-width: 780px) {
     #nav-inner {
-        min-width: calc(max(100% - 100px, 670px));
+        max-width: calc(max(100% - 100px, 670px));
     }
 
-    #inspiration {
+    #inspiration-inner {
         flex-direction: column;
     }
 
@@ -109,7 +141,7 @@ nav {
     }
 
     #inspiration-text {
-        min-width: 100% !important;
+        min-width: calc(max(360px, 100%)) !important;
     }
 
     #inspiration-text p {
@@ -118,6 +150,27 @@ nav {
         transform: none !important;
     }
 
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        font-size: 12pt;
+    }
+
+    #nav-title {
+        min-width: calc(max(180px, 100% - 350px));
+        width: calc(max(180px, 100% - 350px));
+    }
+
+    #demo-video video {
+        max-width: calc(min(100%, 400px)) !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #nav-button-wrapper {
+        font-size: 10pt;
+    }
 }
 
 // main SCSS
@@ -133,10 +186,11 @@ main > *:nth-child(even) {
     background-color: #cccccc;
 }
 
-#inspiration {
+// inspiration section
+#inspiration-inner {
     display: flex;
     justify-content: center;
-    padding: 20px 0;
+    padding: 0 0 $padding 0;
 }
 
 #inspiration-image img {
@@ -152,18 +206,25 @@ main > *:nth-child(even) {
 
 #inspiration-text p {
     margin: 0 10px;
-    padding: 20px 0;
+    font-size: 16pt;
+    padding: $padding 0;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
 }
 
-p {
-    font-size: 16pt;
-    line-height: 1.5em;
-    text-align: center;
+// video section
+#demo-video {
+    padding-bottom: $padding;
 }
 
+#demo-video video {
+    max-width: 1000px;
+    display: block;
+    margin: 0 auto;
+}
+
+// carousel section
 .carousel {
     display: flex;
     justify-content: center;
@@ -215,6 +276,10 @@ p {
     transition: left $carousel-scroll-time, background 0.5s;
 }
 
+#demo-parts-carousel {
+    padding: 0 0 $padding 0;
+}
+
 #demo-parts-carousel > ul {
     display: flex;
     justify-content: space-around;
@@ -229,7 +294,7 @@ p {
     margin: 0;
     border: 2px solid #000000;
     background: #ffffff;
-    transition: background $carousel-scroll-time, all 0s;
+    transition: background $carousel-scroll-time, padding 0s, border 0s;
 }
 
 #demo-parts-carousel > ul li.active {
